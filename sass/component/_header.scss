@@ -1,0 +1,98 @@
+.header {
+    height: 120px;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    .container {
+        max-width: $container-max;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        height: 120px;
+    }
+    h1 {
+        margin: auto 0;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 280px;
+        align-self: center;
+        display: flex;
+        margin-left: 1em;
+        a {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+        img {
+            width: 160px;
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 160px;
+
+            margin: 0;
+            margin-right: 0.5em;
+        }
+        span {
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: auto;
+            font-size: 1rem;
+
+            align-self: center;
+        }
+    }
+    nav {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 40%;
+        align-self: stretch;
+        display: flex;
+        justify-content: flex-end;
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            align-self: stretch;
+            li {
+                font-weight: 700;
+                margin-right: 28px;
+
+                align-items: center;
+                display: flex;
+                a {
+                    display: flex;
+                    align-self: stretch;
+                    align-items: center;
+                    position: relative;
+                    padding: 0 0.5em;
+                    &:hover,
+                    &:focus {
+                        color: $aHover;
+                        &:after {
+                            width: 100%;
+                            left: 0%;
+                        }
+                    }
+                    &:after {
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        width: 0;
+                        left: 50%;
+                        height: 4px;
+                        width: 0;
+                        background-color: $color-blue;
+                        bottom: 0px;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}
