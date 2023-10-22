@@ -7,6 +7,15 @@
     width: 100%;
     top: 0;
     left: 0;
+
+    @include screen('mobile') {
+        height: 60px;
+    }
+
+    @include screen('tablet') {
+        height: 60px;
+    }
+
     .container {
         max-width: $container-max;
         margin: 0 auto;
@@ -14,7 +23,16 @@
         flex-flow: row wrap;
         align-items: center;
         height: 120px;
+
+        @include screen('mobile') {
+            height: 60px;
+        }
+
+        @include screen('tablet') {
+            height: 60px;
+        }
     }
+
     h1 {
         margin: auto 0;
         flex-grow: 0;
@@ -23,20 +41,48 @@
         align-self: center;
         display: flex;
         margin-left: 1em;
+
+        @include screen('mobile') {
+            left: -.5em;
+            top: .5em;
+            position: absolute;
+            flex-basis: 220px;
+            width: 220px;
+        }
+
+        @include screen('tablet') {
+            left: -.5em;
+            top: .5em;
+            position: absolute;
+            flex-basis: 220px;
+            width: 220px;
+        }
+
         a {
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
         }
+
         img {
             width: 160px;
             flex-grow: 0;
             flex-shrink: 1;
             flex-basis: 160px;
-
             margin: 0;
             margin-right: 0.5em;
+
+            @include screen('mobile') {
+                width: 80px;
+                margin-right: .25em;
+            }
+
+            @include screen('tablet') {
+                width: 80px;
+                margin-right: .25em;
+            }
         }
+
         span {
             flex-grow: 0;
             flex-shrink: 1;
@@ -44,8 +90,19 @@
             font-size: 1rem;
 
             align-self: center;
+
+            @include screen('mobile') {
+                font-size: .938rem;
+                white-space: nowrap;
+            }
+
+            @include screen('tablet') {
+                font-size: .938rem;
+                white-space: nowrap;
+            }
         }
     }
+
     nav {
         flex-grow: 1;
         flex-shrink: 1;
@@ -53,32 +110,46 @@
         align-self: stretch;
         display: flex;
         justify-content: flex-end;
+
+        @include screen('mobile') {
+            display: none;
+        }
+
+        @include screen('tablet') {
+            display: none;
+        }
+
         ul {
             list-style: none;
             display: flex;
             justify-content: flex-end;
             margin: 0;
             align-self: stretch;
+
             li {
                 font-weight: 700;
                 margin-right: 28px;
 
                 align-items: center;
                 display: flex;
+
                 a {
                     display: flex;
                     align-self: stretch;
                     align-items: center;
                     position: relative;
                     padding: 0 0.5em;
+
                     &:hover,
                     &:focus {
                         color: $aHover;
+
                         &:after {
                             width: 100%;
                             left: 0%;
                         }
                     }
+
                     &:after {
                         content: '';
                         display: inline-block;

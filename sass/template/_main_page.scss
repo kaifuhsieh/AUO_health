@@ -1,5 +1,6 @@
 section {
     padding: 3em 0;
+
     h2.title {
         color: #333;
         font-size: 3em;
@@ -9,40 +10,94 @@ section {
         display: block;
         text-align: center;
         width: 100%;
+
+        @include screen('mobile') {
+            font-size: 2em;
+        }
+
+        @include screen('tablet') {
+            font-size: 3em;
+        }
     }
+
     h3 {
         font-size: 2em;
         color: $primaryColor;
     }
+
     &.kv {
         height: 720px;
         width: 100%;
         overflow: hidden;
         position: relative;
         display: flex;
+
         @include screen('notebook') {
             height: 620px;
         }
+
+        @include screen('mobile') {
+            height: 80vh;
+            max-height: 500px;
+        }
+
         .container {
             align-self: stretch;
             display: flex;
             padding: 0 5%;
             align-items: flex-end;
             align-content: flex-end;
+
+
             h2.title {
                 text-align: left;
                 margin: 0;
                 color: $primaryColor;
+
+                @include screen('mobile') {
+                    text-align: center;
+                    font-size: 2.5em;
+                    margin-bottom: 2rem;
+                }
+
+                br {
+                    display: none;
+
+                    @include screen('mobile') {
+                        display: block;
+                    }
+                }
+
+
             }
+
             ul {
                 display: flex;
                 padding: 0;
+
+                @include screen('mobile') {
+                    width: 100%;
+                    justify-content: center;
+                }
+
                 li {
                     list-style: none;
                     width: 200px;
                     height: 300px;
                     display: block;
                     margin-right: 2em;
+
+                    @include screen('mobile') {
+                        flex-grow: 0;
+                        flex-shrink: 1;
+                        flex-basis: 150px;
+                        width: 150px;
+                        text-align: center;
+                        margin: 0 1em;
+                        height: 200px;
+                    }
+
+
                     .circle {
                         border-radius: 50%;
                         width: 200px;
@@ -51,6 +106,12 @@ section {
                         display: block;
                         overflow: hidden;
                         margin: 0 0 1em;
+
+                        @include screen('mobile') {
+                            width: 150px;
+                            height: 150px;
+                        }
+
                         img {
                             position: absolute;
                             width: 50%;
@@ -59,6 +120,7 @@ section {
                             top: 25%;
                             z-index: 2;
                         }
+
                         &:after {
                             position: absolute;
                             content: '';
@@ -70,12 +132,14 @@ section {
                             top: 0;
                         }
                     }
+
                     span {
                         font-size: 1.25em;
                     }
                 }
             }
         }
+
         .img_bg {
             position: absolute;
             width: 100%;
@@ -84,11 +148,13 @@ section {
             left: 0;
             right: 0;
             bottom: 0;
+
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
+
             &:after {
                 position: absolute;
                 content: '';
@@ -100,24 +166,66 @@ section {
             }
         }
     }
+
     &.inner_head {
         height: 220px;
         width: 100%;
         overflow: hidden;
         position: relative;
         display: flex;
+
+        @include screen('mobile') {
+            height: 100px;
+        }
+
+        @include screen('tablet') {
+            height: 100px;
+        }
+
         .container {
             align-self: stretch;
             display: flex;
             padding: 0 5%;
             align-items: flex-end;
             align-content: flex-end;
+
+            @include screen('mobile') {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                padding: 0 5%;
+
+            }
+
+            @include screen('tablet') {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                padding: 0 2%;
+
+            }
+
             h2.title {
                 text-align: left;
                 margin: 0;
                 color: $primaryColor;
+
+                @include screen('mobile') {
+                    font-size: 1.75rem;
+                    margin-bottom: .25em;
+                }
+
+                @include screen('tablet') {
+                    font-size: 2.25rem;
+                    margin-bottom: .25em;
+                }
             }
         }
+
         .img_bg {
             position: absolute;
             width: 100%;
@@ -126,11 +234,13 @@ section {
             left: 0;
             right: 0;
             bottom: 0;
+
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
+
             &:after {
                 position: absolute;
                 content: '';
@@ -142,11 +252,14 @@ section {
             }
         }
     }
+
     &.vs {
         padding-bottom: 0;
+
         .container {
             h2.title {
                 position: relative;
+
                 &:after {
                     position: absolute;
                     content: '';
@@ -158,6 +271,7 @@ section {
                     margin-left: -100px;
                 }
             }
+
             .content {
                 max-width: 1200px;
                 overflow: hidden;
@@ -165,10 +279,12 @@ section {
                 flex-grow: 0;
                 flex-shrink: 1;
                 flex-basis: 100%;
+
                 img {
                     width: 100%;
                 }
             }
+
             .btn-grp {
                 flex-grow: 0;
                 flex-shrink: 1;
@@ -176,12 +292,18 @@ section {
             }
         }
     }
+
     &.recruit {
         height: 550px;
         background: url(../images/recruit.jpg) no-repeat center center;
         background-size: cover;
         position: relative;
         display: flex;
+
+        @include screen('mobile') {
+            height: 420px;
+        }
+
         &:before {
             position: absolute;
             content: '';
@@ -191,14 +313,17 @@ section {
             top: 0;
             height: 100%;
         }
+
         .container {
             .content {
                 flex-grow: 0;
                 flex-shrink: 1;
                 flex-basis: 100%;
+
                 h2.title {
                     margin: 1em 0 0;
                 }
+
                 p {
                     margin: 0;
                     font-size: 1.25em;
@@ -206,9 +331,11 @@ section {
             }
         }
     }
+
     &.news {
         h2.title {
             position: relative;
+
             &:after {
                 position: absolute;
                 content: '';
@@ -220,40 +347,61 @@ section {
                 margin-left: -100px;
             }
         }
+
         ul {
             margin: 0 auto;
             max-width: 960px;
             border-top: 10px solid #f7f0e9;
             padding: 1em 5em;
+
+            @include screen('mobile') {
+                padding: 1em;
+            }
+
             li {
                 list-style: none;
                 text-align: left;
                 border-bottom: 1px solid $primaryColor;
                 padding: 1.5em 0;
+
                 a {
                     display: block;
                     font-size: 1.5em;
                     font-weight: bold;
                     line-height: 1.5em;
+
+                    @include screen('mobile') {
+                        font-size: 1.25em;
+                        line-height: 1.35em;
+                    }
+
                     &:hover,
                     &:focus {
                         color: $aHover;
                     }
                 }
+
                 time {
                     color: #414141;
                 }
             }
         }
+
         .btn-grp {
             flex-grow: 1;
             flex-shrink: 1;
             flex-basis: 100%;
         }
     }
+
     &.tool {
+        @include screen('mobile') {
+            padding: 2em 0;
+        }
+
         h2.title {
             position: relative;
+
             &:after {
                 position: absolute;
                 content: '';
@@ -265,47 +413,79 @@ section {
                 margin-left: -100px;
             }
         }
+
         .content {
             width: 100%;
+
             .item {
                 display: flex;
                 flex-flow: row nowrap;
                 width: 100%;
                 justify-content: center;
                 margin-bottom: 5em;
+
+                @include screen('mobile') {
+                    flex-flow: row wrap;
+                }
+
                 .info {
                     flex-grow: 0;
                     flex-shrink: 1;
                     flex-basis: 300px;
                     margin-left: 10%;
                     text-align: center;
+
+                    @include screen('mobile') {
+                        flex-basis: 100%;
+                        margin: 0 auto 2em;
+                    }
+
                     img {
                         width: 200px;
                         display: block;
                         margin: 0 auto 1em;
                     }
+
                     span {
                         display: block;
                         font-size: 1.25em;
                         margin-bottom: 0.5em;
                     }
+
                     em {
                         display: block;
                         font-style: normal;
                         font-size: 1em;
                     }
                 }
+
                 .product {
                     flex-grow: 1;
                     flex-shrink: 1;
                     flex-basis: 40%;
+
+                    @include screen('mobile') {
+                        width: 100%;
+                    }
+
+                    img {
+                        @include screen('mobile') {
+                            width: 100%;
+                        }
+                    }
                 }
+
                 &:nth-child(2n) {
                     .info {
                         order: 2;
                         margin-left: 0;
                         margin-right: 10%;
+
+                        @include screen('mobile') {
+                            order: 1;
+                        }
                     }
+
                     .product {
                         order: 1;
                     }
@@ -313,8 +493,14 @@ section {
             }
         }
     }
+
     &.recruit_info {
         background-color: $primaryColor;
+
+        @include screen('mobile') {
+            padding: 5em 2em;
+        }
+
         p {
             color: #fff;
             text-align: center;
@@ -323,12 +509,17 @@ section {
             max-width: 620px;
             margin: 0 auto;
 
+            @include screen('mobile') {
+                font-size: 1em;
+            }
+
             em {
                 font-weight: bold;
                 font-style: normal;
             }
         }
     }
+
     &.recruit_slogan {
         height: 420px;
         background: url(../images/recruit_slogan_bg.jpg) no-repeat center center;
@@ -337,6 +528,7 @@ section {
         position: relative;
         overflow: hidden;
         align-items: flex-end;
+
         &:before {
             position: absolute;
             content: '';
@@ -346,6 +538,7 @@ section {
             top: 0;
             height: 100%;
         }
+
         h3 {
             flex-grow: 0;
             flex-shrink: 1;
@@ -353,16 +546,28 @@ section {
             text-align: center;
             color: #333;
             font-size: 2.5em;
+
             span {
                 color: $primaryColor;
+
+                @include screen('mobile') {
+                    display: block;
+                }
             }
         }
     }
+
     &.recruit_position {
         padding-top: 8em;
+
+        @include screen('mobile') {
+            padding: 3em 2em;
+        }
+
         .container {
             display: block;
         }
+
         h3,
         h4,
         p {
@@ -372,24 +577,37 @@ section {
             margin: 0 auto 1em;
             max-width: 620px;
         }
+
         h3 {
             line-height: 1.5em;
         }
+
         h4 {
             font-size: 1.5em;
         }
+
         .btn-grp {
             flex-grow: 0;
             flex-shrink: 1;
             flex-basis: 100%;
         }
     }
+
     &.news_content {
         .content {
             max-width: 960px;
             text-align: left;
             margin: 1em auto;
             position: relative;
+
+            @include screen('tablet') {
+                max-width: 80%;
+            }
+
+            @include screen('mobile') {
+                max-width: 90%;
+            }
+
             .back {
                 position: absolute;
                 background-color: #97e8ff;
@@ -412,10 +630,12 @@ section {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
                 span {
                     position: relative;
                     z-index: 2;
                 }
+
                 &:after {
                     position: absolute;
                     content: '';
@@ -434,20 +654,29 @@ section {
                     transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
                     z-index: 1;
                 }
+
                 &:hover,
                 &:focus {
                     span {
                         color: #fff;
                     }
+
                     &:after {
                         transform: scale(26);
                         background-color: $primaryColor;
                     }
                 }
             }
+
             h3 {
                 text-align: left;
+
+                @include screen('mobile') {
+                    font-size: 1.5em;
+                    line-height: 1.35em;
+                }
             }
+
             .editor {
                 text-align: left;
                 font-size: 1.125em;
@@ -455,6 +684,7 @@ section {
                 color: #333;
                 padding-bottom: 5em;
             }
+
             img {
                 max-width: 100%;
                 margin: 0 auto 1em;
@@ -462,11 +692,23 @@ section {
             }
         }
     }
+
     &.news_search {
+        @include screen('mobile') {
+            margin: 0;
+            padding: 1em 0;
+        }
+
         .container {
             max-width: 960px;
             display: flex;
             align-items: stretch;
+
+            @include screen('mobile') {
+                justify-content: center;
+            }
+
+
             .form {
                 flex-grow: 1;
                 flex-shrink: 1;
@@ -474,6 +716,13 @@ section {
                 margin: 1em 0;
                 padding-right: 1em;
                 position: relative;
+
+                @include screen('mobile') {
+                    flex-basis: 100%;
+                    padding: 0;
+                    margin: 0;
+                }
+
                 &:before {
                     position: absolute;
                     content: '';
@@ -484,11 +733,13 @@ section {
                     background: url(../images/icon_search.svg) no-repeat center center;
                     background-size: contain;
                 }
+
                 form {
                     background: #f1f1f1;
                     width: 100%;
                     height: 3.5em;
                     border-radius: 2em;
+
                     input[type='text'] {
                         width: calc(100% - 80px);
                         height: 3.5em;
@@ -497,12 +748,14 @@ section {
                         margin-right: 1em;
                         outline: none;
                         border: none;
+
                         &:focus {
                             outline: none;
                         }
                     }
                 }
             }
+
             .btn-grp {
                 flex-grow: 0;
                 flex-shrink: 0;
@@ -511,17 +764,25 @@ section {
             }
         }
     }
+
     &.news_tag {
         margin: 0 auto;
         padding: 0;
+
         ul {
             max-width: 960px;
             margin: 1em auto;
             text-align: left;
             padding: 0;
+
+            @include screen('mobile') {
+                margin: 0em;
+            }
+
             li {
                 display: inline-block;
                 margin: 0 0.25em 0.5em 0;
+
                 a {
                     padding: 0.5em 1em;
                     background-color: #eee;
@@ -529,11 +790,13 @@ section {
                     display: block;
                     border-radius: 0.25em;
                     transition: 0.3s ease-out;
+
                     &:hover,
                     &:focus {
                         background-color: $primaryColor;
                         color: #fff;
                     }
+
                     &.active {
                         background-color: $primaryColor;
                         color: #fff;
@@ -542,21 +805,35 @@ section {
             }
         }
     }
+
     &.news_list {
+        @include screen('mobile') {
+            padding: 1em 0;
+        }
+
         .list_content {
             max-width: 960px;
             margin: 0em auto 1em;
+
             ul {
                 padding: 0;
+
                 li {
                     list-style: none;
                     display: flex;
                     flex-flow: row nowrap;
                     align-items: flex-start;
                     margin-bottom: 4em;
+
+                    @include screen('mobile') {
+                        flex-flow: row wrap;
+                        margin-bottom: 1em;
+                    }
+
                     &:last-child {
                         margin-bottom: 1em;
                     }
+
                     .pic {
                         flex-grow: 0;
                         flex-shrink: 1;
@@ -565,9 +842,16 @@ section {
                         margin-right: 1em;
                         padding: 0;
                         background-color: #f1f1f1;
+
+                        @include screen('mobile') {
+                            flex-basis: 100%;
+                            min-width: 100%;
+                        }
+
                         a {
                             display: block;
                         }
+
                         img {
                             aspect-ratio: 4/3;
                             width: 100%;
@@ -576,6 +860,7 @@ section {
                             display: block;
                         }
                     }
+
                     .info {
                         flex-grow: 0;
                         flex-shrink: 1;
@@ -583,27 +868,47 @@ section {
                         padding: 0 1em;
                         display: block;
                         text-align: left;
+
+                        @include screen('mobile') {
+                            padding: 1em 0;
+                        }
+
                         time {
                             font-size: 0.938em;
                             color: #555;
                         }
+
                         h3 {
                             font-size: 1.5em;
                             line-height: 1.35em;
                             margin: 0 0 0.5em 0;
+
                             a {
                                 display: block;
                                 color: $aColor;
+
+
+
                                 &:hover,
                                 &:focus {
                                     color: $aHover;
                                 }
                             }
                         }
+
                         p {
                             color: #555;
+
                             a {
                                 display: inline-block;
+
+                                @include screen('mobile') {
+                                    padding: 1em;
+                                    display: block;
+                                    text-align: right;
+                                    margin: 0 0 0 auto;
+                                }
+
                                 &:hover,
                                 &:focus {
                                     color: $aHover;
@@ -616,12 +921,14 @@ section {
         }
     }
 }
+
 .pagination {
     margin: 0.5em auto 3em;
     padding: 0;
     display: block;
     text-align: center;
     font-size: 0.938em;
+
     span {
         color: $primaryColor;
         margin: 0px 0.5em;
@@ -631,6 +938,7 @@ section {
         margin: 10px auto;
         padding: 0;
         display: block;
+
         li {
             display: inline-block;
             min-width: 40px;
@@ -638,6 +946,7 @@ section {
             margin-bottom: 5px;
             list-style: none;
             margin: 0 2px 4px;
+
             a {
                 border-radius: 5px;
                 padding: 6px 10px;
@@ -647,6 +956,7 @@ section {
                 font-size: 1em;
                 color: $color-word;
                 border: #ccc solid 1px;
+
                 &:hover,
                 &:focus {
                     background: $primaryColor;
@@ -654,6 +964,7 @@ section {
                     border: $primaryColor solid 1px;
                 }
             }
+
             &.active {
                 a {
                     color: #fff !important;
@@ -661,6 +972,7 @@ section {
                     border: darken($form-focus, 5) solid 1px;
                 }
             }
+
             %arrow {
                 content: '';
                 position: absolute;
@@ -673,6 +985,7 @@ section {
                 border-left: none;
                 border-bottom: none;
             }
+
             &.first,
             &.prev,
             &.next,
@@ -680,8 +993,10 @@ section {
                 a {
                     text-indent: -9999px;
                     position: relative;
+
                     &:hover,
                     &:focus {
+
                         &:before,
                         &:after {
                             border: 2px solid #fff;
@@ -691,18 +1006,21 @@ section {
                     }
                 }
             }
+
             &.first {
                 a:before {
                     @extend %arrow;
                     margin-left: -6px;
                     transform: rotate(-135deg);
                 }
+
                 a:after {
                     @extend %arrow;
                     margin-left: 0px;
                     transform: rotate(-135deg);
                 }
             }
+
             &.prev {
                 a:before {
                     @extend %arrow;
@@ -710,6 +1028,7 @@ section {
                     transform: rotate(-135deg);
                 }
             }
+
             &.next {
                 a:before {
                     @extend %arrow;
@@ -717,12 +1036,14 @@ section {
                     transform: rotate(45deg);
                 }
             }
+
             &.last {
                 a:before {
                     @extend %arrow;
                     margin-left: -3px;
                     transform: rotate(45deg);
                 }
+
                 a:after {
                     @extend %arrow;
                     margin-left: -9px;
@@ -731,13 +1052,16 @@ section {
             }
         }
     }
+
     .total {
         padding: 0em;
         display: inline-block;
         vertical-align: middle;
+
         select {
             margin: 0px 0.5em;
         }
+
         input[type='button'] {
             border: 1px solid #ccc;
             color: #222;
@@ -747,6 +1071,7 @@ section {
             vertical-align: middle;
             box-shadow: none;
             text-shadow: none;
+
             &:hover,
             &:focus {
                 color: #fff !important;
@@ -756,6 +1081,7 @@ section {
             }
         }
     }
+
     .items {
         display: inline-block;
         vertical-align: middle;
