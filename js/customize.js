@@ -18,4 +18,12 @@ $(function () {
             $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutExpo');
             e.preventDefault();
         });
+
+    var burger = $('.mobile_button').find('.btn');
+    sidebar = $('.sidebar');
+
+    burger.off().click(function (e) {
+        sidebar.stop().toggleClass('menu-opened');
+        $(this).blur();
+    });
 });
