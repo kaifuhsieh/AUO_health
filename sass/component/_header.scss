@@ -110,12 +110,10 @@
         align-self: stretch;
         display: flex;
         justify-content: flex-end;
-
-        @include screen('mobile') {
+        @include screen('tablet') {
             display: none;
         }
-
-        @include screen('tablet') {
+        @include screen('mobile') {
             display: none;
         }
 
@@ -175,6 +173,9 @@
         top: 0;
         display: none;
 
+        @include screen('tablet') {
+            display: block;
+        }
         @include screen('mobile') {
             display: block;
         }
