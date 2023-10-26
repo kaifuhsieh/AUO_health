@@ -36,12 +36,12 @@ button {
         -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
         transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
         z-index: 1;
+        box-shadow: none;
     }
     &:hover,
     &:focus {
         &:after {
             transform: scale(20);
-            background-color: $color-yellow;
         }
     }
 
