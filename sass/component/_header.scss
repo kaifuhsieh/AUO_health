@@ -37,7 +37,7 @@
         margin: auto 0;
         flex-grow: 0;
         flex-shrink: 1;
-        flex-basis: 280px;
+        flex-basis: 360px;
         align-self: center;
         display: flex;
         margin-left: 1em;
@@ -70,7 +70,7 @@
             flex-shrink: 1;
             flex-basis: 160px;
             margin: 0;
-            margin-right: 0.5em;
+            margin-right: 1.25em;
 
             @include screen('mobile') {
                 width: 80px;
@@ -87,8 +87,8 @@
             flex-grow: 0;
             flex-shrink: 1;
             flex-basis: auto;
-            font-size: 1rem;
-
+            font-size: 1.5rem;
+            font-weight: normal;
             align-self: center;
 
             @include screen('mobile') {
@@ -137,7 +137,9 @@
                     align-items: center;
                     position: relative;
                     padding: 0 0.5em;
-
+                    span {
+                        font-weight: bold;
+                    }
                     &:hover,
                     &:focus {
                         color: $aHover;

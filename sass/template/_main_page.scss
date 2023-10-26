@@ -2,7 +2,7 @@ section {
     padding: 3em 0;
 
     h2.title {
-        color: #333;
+        color: #444;
         font-size: 3em;
         font-weight: bold;
         margin: 1rem 0 3rem;
@@ -10,7 +10,6 @@ section {
         display: block;
         text-align: center;
         width: 100%;
-
         @include screen('mobile') {
             font-size: 2em;
         }
@@ -48,7 +47,6 @@ section {
             align-items: flex-end;
             align-content: flex-end;
 
-
             h2.title {
                 text-align: left;
                 margin: 0;
@@ -67,8 +65,6 @@ section {
                         display: block;
                     }
                 }
-
-
             }
 
             ul {
@@ -96,7 +92,6 @@ section {
                         margin: 0 1em;
                         height: 200px;
                     }
-
 
                     .circle {
                         border-radius: 50%;
@@ -196,7 +191,6 @@ section {
                 top: 0;
                 left: 0;
                 padding: 0 5%;
-
             }
 
             @include screen('tablet') {
@@ -206,7 +200,6 @@ section {
                 top: 0;
                 left: 0;
                 padding: 0 2%;
-
             }
 
             h2.title {
@@ -216,12 +209,12 @@ section {
 
                 @include screen('mobile') {
                     font-size: 1.75rem;
-                    margin-bottom: .25em;
+                    margin-bottom: 0.25em;
                 }
 
                 @include screen('tablet') {
                     font-size: 2.25rem;
-                    margin-bottom: .25em;
+                    margin-bottom: 0.25em;
                 }
             }
         }
@@ -321,7 +314,8 @@ section {
                 flex-basis: 100%;
 
                 h2.title {
-                    margin: 1em 0 0;
+                    margin: 1em 0 0.5em;
+                    color: $primaryColor;
                 }
 
                 p {
@@ -708,7 +702,6 @@ section {
                 justify-content: center;
             }
 
-
             .form {
                 flex-grow: 1;
                 flex-shrink: 1;
@@ -887,8 +880,6 @@ section {
                                 display: block;
                                 color: $aColor;
 
-
-
                                 &:hover,
                                 &:focus {
                                     color: $aHover;
@@ -996,7 +987,6 @@ section {
 
                     &:hover,
                     &:focus {
-
                         &:before,
                         &:after {
                             border: 2px solid #fff;

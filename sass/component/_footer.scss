@@ -24,11 +24,15 @@
             align-self: flex-start;
             img {
                 width: 190px;
+                @media screen and (min-width: 1100px) {
+                    margin-right: 160px;
+                }
             }
             @include screen('tablet') {
                 flex-basis: 100%;
                 text-align: left;
                 margin-bottom: 1em;
+                margin-right: 160px;
             }
             @include screen('mobile') {
                 flex-basis: 100%;
@@ -139,6 +143,10 @@
             font-size: 0.875rem;
             @include screen('mobile') {
                 text-align: left;
+            }
+            p {
+                font-size: 0.913rem;
+                color: #333;
             }
         }
     }
