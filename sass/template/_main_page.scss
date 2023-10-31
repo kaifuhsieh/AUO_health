@@ -109,10 +109,10 @@ section {
 
                         img {
                             position: absolute;
-                            width: 50%;
-                            height: 50%;
-                            left: 25%;
-                            top: 25%;
+                            width: 80%;
+                            height: 80%;
+                            left: 10%;
+                            top: 10%;
                             z-index: 2;
                         }
 
@@ -208,8 +208,9 @@ section {
                 color: $primaryColor;
 
                 @include screen('mobile') {
-                    font-size: 1.75rem;
+                    font-size: 1.65rem;
                     margin-bottom: 0.25em;
+                    font-weight: bold;
                 }
 
                 @include screen('tablet') {
@@ -418,7 +419,7 @@ section {
                 justify-content: center;
                 margin-bottom: 5em;
 
-                @include screen('mobile') {
+                @include screen('tablet') {
                     flex-flow: row wrap;
                 }
 
@@ -429,7 +430,7 @@ section {
                     margin-left: 10%;
                     text-align: center;
 
-                    @include screen('mobile') {
+                    @include screen('tablet') {
                         flex-basis: 100%;
                         margin: 0 auto 2em;
                     }
@@ -458,12 +459,12 @@ section {
                     flex-shrink: 1;
                     flex-basis: 40%;
 
-                    @include screen('mobile') {
+                    @include screen('tablet') {
                         width: 100%;
                     }
 
                     img {
-                        @include screen('mobile') {
+                        @include screen('tablet') {
                             width: 100%;
                         }
                     }
@@ -475,7 +476,7 @@ section {
                         margin-left: 0;
                         margin-right: 10%;
 
-                        @include screen('mobile') {
+                        @include screen('tablet') {
                             order: 1;
                         }
                     }
@@ -492,7 +493,7 @@ section {
         background-color: $primaryColor;
 
         @include screen('mobile') {
-            padding: 5em 2em;
+            padding: 5em 1em;
         }
 
         p {
@@ -540,7 +541,9 @@ section {
             text-align: center;
             color: #333;
             font-size: 2.5em;
-
+            @include screen('mobile') {
+                font-size: 2.25em;
+            }
             span {
                 color: $primaryColor;
 
@@ -555,7 +558,7 @@ section {
         padding-top: 8em;
 
         @include screen('mobile') {
-            padding: 3em 2em;
+            padding: 3em 1em;
         }
 
         .container {
@@ -683,6 +686,7 @@ section {
                 max-width: 100%;
                 margin: 0 auto 1em;
                 display: block;
+                width: 100%;
             }
         }
     }
@@ -843,6 +847,7 @@ section {
 
                         a {
                             display: block;
+                            background-color: #f1f1f1;
                         }
 
                         img {

@@ -1,7 +1,7 @@
 @mixin screen($size) {
     $desktop: '(min-width: 1600px)';
     $notebook: '(min-width: 1024px) and (max-width: 1599px)';
-    $tablet: '(min-width: 768px) and (max-width: 1023px)';
+    $tablet: '(max-width: 1023px)';
     $mobile: '(max-width: 767px)';
     $xs_mobile: '(max-width: 576px)';
     @if $size == desktop {
