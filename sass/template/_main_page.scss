@@ -10,12 +10,9 @@ section {
         display: block;
         text-align: center;
         width: 100%;
-        @include screen('mobile') {
-            font-size: 2em;
-        }
 
         @include screen('tablet') {
-            font-size: 3em;
+            font-size: 2em;
         }
     }
 
@@ -206,16 +203,14 @@ section {
                 text-align: left;
                 margin: 0;
                 color: $primaryColor;
-
-                @include screen('mobile') {
-                    font-size: 1.65rem;
-                    margin-bottom: 0.25em;
-                    font-weight: bold;
-                }
-
                 @include screen('tablet') {
                     font-size: 2.25rem;
                     margin-bottom: 0.25em;
+                }
+                @include screen('mobile') {
+                    font-size: 1.5rem;
+                    margin-bottom: 0.25em;
+                    font-weight: bold;
                 }
             }
         }

@@ -146,6 +146,7 @@
             font-size: 0.875rem;
             @include screen('mobile') {
                 text-align: left;
+                flex-basis: 100%;
             }
             p {
                 font-size: 0.913rem;
