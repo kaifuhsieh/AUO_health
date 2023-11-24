@@ -97,7 +97,8 @@
             display: flex;
             padding: 0 1em;
             align-self: flex-start;
-            font-size: 0.875rem;
+            font-size: 1rem;
+            line-height: 1.75em;
             flex-flow: row wrap;
             @include screen('tablet') {
                 flex-grow: 1;

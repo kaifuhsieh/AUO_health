@@ -48,7 +48,7 @@ section {
                 text-align: left;
                 margin: 0;
                 color: $primaryColor;
-
+font-size: 2.5em;
                 @include screen('mobile') {
                     text-align: center;
                     font-size: 2.5em;
@@ -106,10 +106,10 @@ section {
 
                         img {
                             position: absolute;
-                            width: 80%;
-                            height: 80%;
-                            left: 10%;
-                            top: 10%;
+                            width: 50%;
+                            height: 50%;
+                            left: 25%;
+                            top: 25%;
                             z-index: 2;
                         }
 
